@@ -1,0 +1,5 @@
+package edu.kh.kdbc1.model.vo;
+
+public class Emp {
+
+}
