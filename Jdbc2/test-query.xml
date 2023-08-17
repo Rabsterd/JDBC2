@@ -10,4 +10,10 @@
 		INSERT INTO TB_TEST
 		VALUES(?, ?, ?)
 	</entry>
+	<entry key = "update"> 
+		UPDATE TB_TEST SET
+		TEST_TITLE = ?,
+		TEST_CONTENT = ?
+		WHERE TEST_NO = ?
+	</entry>
 </properties>

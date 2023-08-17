@@ -66,7 +66,10 @@ public class JDBCTemplate {
 		return conn;
 		
 	}
-	// Connection 객체 자원 반환 메서드
+	
+	/** Connection 객체 자원 반환 메서드
+	 * @param conn
+	 */
 	public static void close(Connection conn) {
 		
 		try {

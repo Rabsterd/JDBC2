@@ -50,8 +50,9 @@ public class TestDAO {
 		// INSERT INTO TB_TEST
 		// VALUES(?, ?, ?)
 		
-		// 3. PreparedStatement 객체 생성
+		// 3. PrepareStatement 객체 생성
 		pstmt = conn.prepareStatement(sql);
+		
 		
 		// 4. 위치 홀더(?)에 알맞은 값 세팅
 		pstmt.setInt(1, vo1.getTestNo());
@@ -71,6 +72,40 @@ public class TestDAO {
 		// 7. SQL 수행 결과 반환
 		return result;
 		
+	}
+
+	// 번호가 일치하는 행 제목, 내용 수정
+	public int update(Connection conn, TestVO vo) throws Exception {
+		
+		// 결과 저장용 변수
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("update");
+			/*
+			 *UPDATE TB_TEST SET
+			 *TEST_TITLE = ?,
+			 *TEST_CONTENT = ?
+			 *WHERE TEST_NO = ? 
+			 */
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, vo.getTestTitle() );
+			pstmt.setString(2, vo.getTestContent() );
+			pstmt.setInt(3, vo.getTestNo());
+			
+			result = pstmt.executeUpdate();
+			
+			
+		} finally {
+			
+			close(pstmt);
+		}
+		
+		
+		
+		return result;
 	}
 
 }

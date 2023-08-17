@@ -12,8 +12,8 @@ public class Run2 {
 		TestService service = new TestService();
 		
 		TestVO vo1 = new TestVO(70, "제목70", "내용70");
-		TestVO vo2 = new TestVO(70, "제목80", "내용80");
-		TestVO vo3 = new TestVO(70, "제목90", "내용90");
+		TestVO vo2 = new TestVO(80, "제목80", "내용80");
+		TestVO vo3 = new TestVO(90, "제목90", "내용90");
 		
 		try {
 			
