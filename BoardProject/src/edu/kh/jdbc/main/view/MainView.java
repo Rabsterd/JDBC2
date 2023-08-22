@@ -63,7 +63,7 @@ public class MainView {
 					
 					switch(input) {
 					case 1 : memberView.memberMenu(); break;
-					case 2 :  break;
+					case 2 : boardView.boardMenu(); break;
 					case 3 : 
 						System.out.println("\n === 로그아웃 되었습니다 === \n");
 						
